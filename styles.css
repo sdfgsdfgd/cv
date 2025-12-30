@@ -1,0 +1,325 @@
+:root {
+  --paper: #fbf7ef;
+  --ink: #1f2328;
+  --muted: #5c636a;
+  --accent: #0e6f6b;
+  --line: #d7d0c5;
+  --paper-texture: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.62)),
+    repeating-linear-gradient(90deg, rgba(160, 130, 90, 0.06) 0, rgba(160, 130, 90, 0.06) 1px, transparent 1px, transparent 7px),
+    repeating-linear-gradient(90deg, rgba(130, 100, 70, 0.04) 0, rgba(130, 100, 70, 0.04) 2px, transparent 2px, transparent 18px);
+  --serif: "Cormorant Garamond", "Hoefler Text", "Baskerville", serif;
+  --sans: "Source Sans 3", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--ink);
+  background: #e7dfd3;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.pages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 10px 30px;
+}
+
+.page {
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 14mm 14mm 12mm 18mm;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  box-shadow: 0 12px 40px rgba(31, 35, 40, 0.12);
+  background-image: var(--paper-texture);
+}
+
+.side-ornament {
+  position: absolute;
+  top: 12mm;
+  bottom: 12mm;
+  left: 8mm;
+  width: 1px;
+  background: var(--line);
+}
+
+.side-ornament::before,
+.side-ornament::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: var(--paper) url("ornament-mini.svg") center/contain no-repeat;
+}
+
+.side-ornament::before {
+  top: -6px;
+}
+
+.side-ornament::after {
+  bottom: -6px;
+}
+
+.header {
+  margin-bottom: 6mm;
+}
+
+.header.minimal {
+  margin-bottom: 4mm;
+}
+
+.header.minimal .ornament-line {
+  margin-top: 0;
+}
+.name {
+  font-family: var(--serif);
+  font-size: 30pt;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.name.small {
+  font-size: 20pt;
+}
+
+.role-tag {
+  margin-top: 2mm;
+  font-size: 9.5pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.role-tag.small {
+  font-size: 8.5pt;
+  letter-spacing: 0.2em;
+}
+
+.contact {
+  margin-top: 4mm;
+  font-size: 9.5pt;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+}
+
+.contact span:not(:last-child)::after {
+  content: " |";
+  margin-left: 6px;
+  color: var(--line);
+}
+
+.ornament-line {
+  margin-top: 4mm;
+  height: 1px;
+  background: var(--line);
+  position: relative;
+}
+
+.ornament-line::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  width: 54px;
+  height: 12px;
+  background: var(--paper) url("ornament.svg") center/contain no-repeat;
+  transform: translateX(-50%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.38fr 0.62fr;
+  gap: 8mm;
+}
+
+.section {
+  margin-bottom: 6mm;
+}
+
+.section.tight {
+  margin-top: 2mm;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 3mm;
+}
+
+.section-title::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: url("ornament-mini.svg") center/contain no-repeat;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+  margin-left: 6px;
+}
+
+p {
+  margin: 0 0 3mm;
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 10px;
+  margin-bottom: 4px;
+  font-size: 9.8pt;
+  line-height: 1.4;
+}
+
+.bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.skill-list {
+  display: grid;
+  gap: 6px;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+}
+
+.skill-label {
+  font-size: 8.8pt;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.skill-text {
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+
+.role {
+  margin-bottom: 6mm;
+}
+
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 8px;
+  margin-bottom: 2mm;
+}
+
+.role-company {
+  font-size: 11pt;
+  font-weight: 600;
+}
+
+.role-title {
+  font-size: 9.6pt;
+  color: var(--muted);
+}
+
+.role-meta {
+  font-size: 9pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.compact {
+  font-size: 9.5pt;
+  color: var(--muted);
+  margin: 0 0 4mm;
+}
+
+.compact-role {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 3mm;
+}
+
+.compact-company {
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.compact-title {
+  font-size: 9pt;
+  color: var(--muted);
+}
+
+.compact-meta {
+  font-size: 9pt;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: white;
+  }
+
+  .pages {
+    gap: 0;
+    padding: 0;
+  }
+
+  .page {
+    box-shadow: none;
+    border: none;
+    width: auto;
+    min-height: auto;
+    page-break-after: always;
+  }
+}
