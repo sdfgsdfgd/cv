@@ -194,6 +194,11 @@ p {
   line-height: 1.45;
 }
 
+.strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 .bullets {
   list-style: none;
   padding: 0;
@@ -221,17 +226,17 @@ p {
 
 .skill-list {
   display: grid;
-  gap: 6px;
+  gap: 4px;
 }
 
 .skill {
   display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 8px;
+  grid-template-columns: 92px 1fr;
+  gap: 6px;
 }
 
 .skill-label {
-  font-size: 8.8pt;
+  font-size: 8.4pt;
   font-weight: 600;
   color: var(--muted);
   text-transform: uppercase;
@@ -239,12 +244,76 @@ p {
 }
 
 .skill-text {
-  font-size: 9.5pt;
-  line-height: 1.35;
+  font-size: 9.2pt;
+  line-height: 1.25;
+}
+
+.skill-band {
+  margin: 2mm 0 0;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4mm 5mm;
+}
+
+.skill-cluster {
+  border-left: 2px solid rgba(14, 111, 107, 0.5);
+  padding: 1px 0 1px 7px;
+  background: linear-gradient(90deg, rgba(14, 111, 107, 0.035), transparent 80%);
+}
+
+.skill-cluster-label {
+  font-size: 8.3pt;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1mm;
+}
+
+.skill-cluster-text {
+  font-size: 9.1pt;
+  line-height: 1.25;
+  color: var(--muted);
+}
+
+.proof-list {
+  display: grid;
+  gap: 3mm;
+}
+
+.proof-item {
+  border-left: 2px solid rgba(14, 111, 107, 0.5);
+  padding: 1px 0 1px 7px;
+  background: linear-gradient(90deg, rgba(14, 111, 107, 0.035), transparent 84%);
+}
+
+.proof-label {
+  font-size: 8.2pt;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1mm;
+}
+
+.proof-text {
+  font-size: 9.2pt;
+  line-height: 1.28;
+  color: var(--muted);
 }
 
 .role {
-  margin-bottom: 6mm;
+  margin-bottom: 5mm;
+}
+
+.role.featured {
+  border-left: 2px solid rgba(14, 111, 107, 0.58);
+  margin-left: -9px;
+  padding-left: 7px;
+  background: linear-gradient(90deg, rgba(14, 111, 107, 0.035), transparent 72%);
 }
 
 .role-header {
@@ -275,6 +344,24 @@ p {
   font-size: 9.5pt;
   color: var(--muted);
   margin: 0 0 4mm;
+}
+
+.page:nth-of-type(2) .left .section {
+  margin-bottom: 5mm;
+}
+
+.page:nth-of-type(2) .left .section-title {
+  margin-bottom: 2mm;
+}
+
+.page:nth-of-type(2) .left .compact,
+.page:nth-of-type(2) .left .bullets li {
+  font-size: 9.2pt;
+  line-height: 1.28;
+}
+
+.page:nth-of-type(2) .left .bullets li {
+  margin-bottom: 3px;
 }
 
 .compact-role {
